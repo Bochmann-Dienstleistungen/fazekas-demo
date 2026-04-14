@@ -58,7 +58,7 @@ nav.scrolled{background:rgba(11,11,11,.95);backdrop-filter:blur(16px);border-bot
 /* ===== HERO ===== */
 .hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:flex-end}
 .hero-slides{position:absolute;inset:0}
-.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease;will-change:transform,opacity}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease;will-change:transform,opacity;filter:blur(1.5px) brightness(0.75);transform:scale(1.04)}
 .hero-slide.on{opacity:1}
 .hero-dim{position:absolute;inset:0;background:linear-gradient(to right,rgba(11,11,11,.88) 0%,rgba(11,11,11,.45) 60%,rgba(11,11,11,.7) 100%)}
 .hero-dim2{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.7) 0%,transparent 45%)}
@@ -275,9 +275,9 @@ footer{background:var(--black);padding:40px 48px;border-top:1px solid var(--bord
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-slides">
-    <div class="hero-slide on" style="background-image:url('https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&w=1920')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.pexels.com/photos/1029615/pexels-photo-1029615.jpeg?auto=compress&w=1920')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.pexels.com/photos/2138126/pexels-photo-2138126.jpeg?auto=compress&w=1920')"></div>
+    <div class="hero-slide on" style="background-image:url('images/Tunnelhaus001.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/Rothe1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/Strehlow1.jpg')"></div>
   </div>
   <div class="hero-dim"></div>
   <div class="hero-dim2"></div>
