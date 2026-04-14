@@ -3,237 +3,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fazekas Dachdeckermeister Zwickau — Ihr Dach in besten Händen</title>
-<meta name="description" content="Fazekas Dachdeckermeister UG Zwickau. Dacheindeckung, Sanierung, Klempnerei, Gerüstbau. Meisterbetrieb. 0375 390 96 40.">
+<title>Fazekas Dachdeckermeister Zwickau — Eindeckung · Sanierung · Klempnerei</title>
+<meta name="description" content="Enrico Fazekas Dachdeckermeister UG Zwickau. Dacheindeckung, Sanierung, Klempnerei, Gerüstbau. Meisterbetrieb. Jetzt anfragen: 0375 390 96 40.">
 <meta property="og:title" content="Fazekas Dachdeckermeister Zwickau">
-<meta property="og:description" content="Ihr Dach in besten Händen — Meisterbetrieb aus Zwickau.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg:     #09090b;
-  --bg2:    #111115;
-  --bg3:    #18181d;
-  --bg4:    #222228;
-  --text:   #e8e3d8;
-  --muted:  rgba(232,227,216,0.48);
+  --black:  #0b0b0b;
+  --black2: #141414;
+  --black3: #1c1c1c;
+  --white:  #f4f0e8;
   --copper: #c8752a;
-  --copper2:#e8a050;
-  --cream:  #f5f0e6;
-  --dark-on-cream: #18181d;
-  --border: rgba(200,117,42,0.15);
-  --border2:rgba(232,227,216,0.08);
+  --copper2:#e89a50;
+  --muted:  rgba(244,240,232,0.45);
+  --border: rgba(200,117,42,0.18);
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:auto}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;font-size:16px;line-height:1.7}
+body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.7}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 /* ===== LOADER ===== */
-#loader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px}
-.loader-title{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:0.12em;color:var(--text)}
-.loader-title span{color:var(--copper)}
-.loader-bar{width:200px;height:1px;background:rgba(200,117,42,.15);position:relative;overflow:hidden}
-#loader-fill{position:absolute;inset:0;width:0;background:var(--copper)}
-.loader-sub{font-size:10px;letter-spacing:0.5em;text-transform:uppercase;color:var(--muted)}
+#loader{position:fixed;inset:0;z-index:9999;background:var(--black);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.ld-name{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:0.08em;color:var(--white)}
+.ld-name b{color:var(--copper)}
+.ld-bar{width:220px;height:1px;background:rgba(200,117,42,.12);overflow:hidden;position:relative}
+#ld-fill{position:absolute;inset:0;width:0;background:var(--copper)}
+.ld-sub{font-size:9px;letter-spacing:.55em;text-transform:uppercase;color:var(--muted)}
 
 /* ===== NAV ===== */
-nav{position:fixed;top:0;left:0;right:0;z-index:700;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(9,9,11,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);will-change:transform;transition:transform .4s}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.1em}
-.nav-logo span{color:var(--copper)}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);transition:color .3s}
-.nav-links a:hover{color:var(--text)}
-.nav-cta{padding:11px 26px;background:var(--copper);color:#fff;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;transition:background .3s}
-.nav-cta:hover{background:var(--copper2)}
-.nav-mobile-btn{display:none;flex-direction:column;gap:5px;padding:8px}
-.nav-mobile-btn span{width:22px;height:1.5px;background:var(--text);transition:all .3s}
-.mobile-menu{position:fixed;inset:0;z-index:750;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .4s}
-.mobile-menu.open{opacity:1;pointer-events:all}
-.mobile-menu a{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:0.08em}
-.mobile-close{position:absolute;top:24px;right:24px;font-size:26px;color:var(--muted);background:none;border:none;cursor:pointer}
-@media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-mobile-btn{display:flex}nav{padding:0 20px}}
+nav{position:fixed;top:0;left:0;right:0;z-index:700;height:68px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(11,11,11,0);transition:background .4s,border-color .4s;border-bottom:1px solid transparent;will-change:transform}
+nav.scrolled{background:rgba(11,11,11,.95);backdrop-filter:blur(16px);border-bottom-color:var(--border)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.1em}
+.nav-logo b{color:var(--copper)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .25s}
+.nav-links a:hover{color:var(--white)}
+.nav-phone{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.06em;color:var(--copper);transition:color .25s}
+.nav-phone:hover{color:var(--copper2)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:6px}
+.hamburger span{width:22px;height:1.5px;background:var(--white);display:block;transition:all .3s}
+.mob-menu{position:fixed;inset:0;z-index:800;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity .35s}
+.mob-menu.open{opacity:1;pointer-events:all}
+.mob-menu a{font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:.06em;transition:color .25s}
+.mob-menu a:hover{color:var(--copper)}
+.mob-close{position:absolute;top:22px;right:28px;font-size:28px;color:var(--muted)}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}nav{padding:0 20px}.nav-phone{font-size:15px}}
 
 /* ===== HERO ===== */
-.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0}
-.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;will-change:transform,opacity;transition:opacity 1.6s ease}
-.hero-slide.active{opacity:1}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(9,9,11,.92) 0%,rgba(9,9,11,.6) 50%,rgba(9,9,11,.78) 100%)}
-.hero-content{position:relative;z-index:2;padding:0 48px;padding-top:72px;max-width:780px}
-.hero-eyebrow{font-size:11px;letter-spacing:0.45em;text-transform:uppercase;color:var(--copper);margin-bottom:24px;display:flex;align-items:center;gap:12px;opacity:0}
-.hero-eyebrow::before{content:'';width:32px;height:1.5px;background:var(--copper)}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,8vw,112px);line-height:.95;margin-bottom:28px;opacity:0;letter-spacing:0.03em}
-.hero-title em{color:var(--copper);font-style:normal}
-.hero-sub{font-size:17px;font-weight:300;color:var(--muted);max-width:480px;line-height:1.85;margin-bottom:44px;opacity:0}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0}
-.btn-primary{padding:16px 40px;background:var(--copper);color:#fff;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;font-family:'Inter',sans-serif;transition:background .3s;display:inline-block}
-.btn-primary:hover{background:var(--copper2)}
-.btn-outline{padding:15px 40px;border:1.5px solid rgba(232,227,216,.2);color:var(--text);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;transition:all .3s;display:inline-block}
-.btn-outline:hover{border-color:var(--copper);color:var(--copper)}
-.hero-badge{position:absolute;bottom:48px;right:48px;z-index:2;width:110px;height:110px;border-radius:50%;background:var(--copper);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;opacity:0}
-.hero-badge-top{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:2px}
-.hero-badge-main{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.05em;color:#fff;line-height:1}
-.hero-badge-sub{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:2px}
-.hero-dots{position:absolute;bottom:52px;left:48px;z-index:2;display:flex;gap:8px}
-.hero-dot{width:28px;height:2px;background:rgba(232,227,216,.2);cursor:pointer;transition:all .4s}
-.hero-dot.active{background:var(--copper);width:44px}
-@media(max-width:768px){.hero-content{padding:0 20px;padding-top:80px}.hero-badge{bottom:20px;right:20px;width:88px;height:88px}.hero-dots{left:20px}}
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:flex-end}
+.hero-slides{position:absolute;inset:0}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease;will-change:transform,opacity}
+.hero-slide.on{opacity:1}
+.hero-dim{position:absolute;inset:0;background:linear-gradient(to right,rgba(11,11,11,.88) 0%,rgba(11,11,11,.45) 60%,rgba(11,11,11,.7) 100%)}
+.hero-dim2{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.7) 0%,transparent 45%)}
+.hero-content{position:relative;z-index:2;padding:0 48px 72px;width:100%}
+.hero-tag{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--copper);display:flex;align-items:center;gap:10px;margin-bottom:20px;opacity:0}
+.hero-tag::before{content:'';width:36px;height:1.5px;background:var(--copper);flex-shrink:0}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,9vw,130px);line-height:.88;letter-spacing:.02em;margin-bottom:32px;overflow:hidden}
+.hero-h1-line{display:block;overflow:hidden}
+.hero-h1-inner{display:block;transform:translateY(110%)}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.hero-sub{font-size:15px;color:var(--muted);max-width:380px;line-height:1.8;opacity:0}
+.hero-cta-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:12px;opacity:0}
+.hero-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.5vw,32px);letter-spacing:.06em;color:var(--white)}
+.hero-num span{color:var(--copper)}
+.btn-cop{padding:14px 38px;background:var(--copper);color:#fff;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;transition:background .3s;display:inline-block;white-space:nowrap}
+.btn-cop:hover{background:var(--copper2)}
+.btn-ghost{padding:13px 38px;border:1.5px solid rgba(244,240,232,.2);color:var(--white);font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:all .3s;display:inline-block}
+.btn-ghost:hover{border-color:var(--copper);color:var(--copper)}
+.hero-dots{position:absolute;right:48px;top:50%;transform:translateY(-50%);z-index:2;display:flex;flex-direction:column;gap:8px}
+.hero-dot{width:2px;height:28px;background:rgba(244,240,232,.2);transition:all .4s;cursor:pointer}
+.hero-dot.on{background:var(--copper);height:44px}
+@media(max-width:768px){.hero-content{padding:0 20px 56px}.hero-bottom{flex-direction:column;align-items:flex-start}.hero-cta-wrap{align-items:flex-start}.hero-dots{display:none}}
 
-/* ===== STATS BAR ===== */
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
-.stat-item{background:var(--bg2);padding:40px 28px;text-align:center}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--copper);line-height:1;margin-bottom:8px}
-.stat-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted)}
-@media(max-width:768px){.stats-bar{grid-template-columns:repeat(2,1fr)}.stat-item{padding:28px 16px}}
+/* ===== CATCH SECTION ===== */
+.catch{background:var(--white);color:var(--black);padding:100px 48px;text-align:center;position:relative;overflow:hidden}
+.catch-q{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5.5vw,78px);line-height:.95;letter-spacing:.02em;margin-bottom:28px;color:var(--black)}
+.catch-q em{color:var(--copper);font-style:normal}
+.catch-body{font-size:18px;color:rgba(11,11,11,.6);max-width:560px;margin:0 auto 40px;line-height:1.8}
+.catch-cta{display:inline-flex;align-items:center;gap:14px;padding:18px 44px;background:var(--black);color:var(--white);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;transition:background .3s}
+.catch-cta:hover{background:var(--copper)}
+.catch-cta svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;transition:transform .3s}
+.catch-cta:hover svg{transform:translateX(4px)}
+.catch-note{margin-top:20px;font-size:13px;color:rgba(11,11,11,.4);letter-spacing:.05em}
+@media(max-width:768px){.catch{padding:64px 20px}}
 
-/* ===== LEISTUNGEN (Horizontal Scroll) ===== */
-.services-section{overflow:hidden;position:relative}
-.services-header{padding:80px 48px 56px}
-.eyebrow{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--copper);margin-bottom:14px;display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:'';width:24px;height:1.5px;background:var(--copper)}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,4.5vw,64px);line-height:.95;letter-spacing:0.04em}
-.section-title em{color:var(--copper);font-style:normal}
-.section-sub{font-size:16px;color:var(--muted);max-width:500px;margin-top:14px;line-height:1.8}
-#cards-track{display:flex;gap:3px;padding:0 48px 80px;width:max-content;align-items:stretch}
-.s-card{flex-shrink:0;width:340px;background:var(--bg2);overflow:hidden;position:relative;cursor:default}
-.s-card-img{height:240px;overflow:hidden;position:relative}
-.s-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;will-change:transform}
-.s-card:hover .s-card-img img{transform:scale(1.06)}
-.s-card-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(9,9,11,.8) 0%,transparent 55%)}
-.s-card-body{padding:28px 28px 36px}
-.s-card-num{font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--copper);letter-spacing:0.2em;margin-bottom:10px}
-.s-card-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.05em;margin-bottom:12px}
-.s-card-text{font-size:14px;color:var(--muted);line-height:1.85}
-@media(max-width:768px){.services-header{padding:56px 20px 36px}#cards-track{padding:0 20px 56px}}
+/* ===== LEISTUNGEN (Accordion + Foto) ===== */
+.lst-section{background:var(--black);padding:100px 0}
+.lst-inner{display:grid;grid-template-columns:1fr 1fr;min-height:580px}
+.lst-left{padding:0 48px 0 48px;display:flex;flex-direction:column;justify-content:center}
+.lst-tag{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--copper);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.lst-tag::before{content:'';width:22px;height:1.5px;background:var(--copper)}
+.lst-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,3.8vw,54px);letter-spacing:.03em;line-height:.95;margin-bottom:48px;color:var(--white)}
+.lst-title em{color:var(--copper);font-style:normal}
+.lst-item{border-top:1px solid rgba(244,240,232,.08);cursor:pointer;transition:border-color .3s}
+.lst-item:last-child{border-bottom:1px solid rgba(244,240,232,.08)}
+.lst-item.active{border-top-color:var(--copper)}
+.lst-item-head{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:16px}
+.lst-item-num{font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--copper);letter-spacing:.2em;flex-shrink:0}
+.lst-item-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;flex:1;transition:color .3s}
+.lst-item.active .lst-item-name{color:var(--copper)}
+.lst-item-arrow{font-size:18px;color:var(--muted);transition:transform .35s,color .3s;flex-shrink:0}
+.lst-item.active .lst-item-arrow{transform:rotate(45deg);color:var(--copper)}
+.lst-item-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.lst-item-body p{font-size:14px;color:var(--muted);line-height:1.85;padding-bottom:20px}
+.lst-right{position:relative;overflow:hidden}
+.lst-photo{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;opacity:0;transition:opacity .6s ease;will-change:opacity}
+.lst-photo.on{opacity:1}
+.lst-photo-curtain{position:absolute;inset:0;background:var(--black);transform-origin:right;z-index:1}
+@media(max-width:900px){.lst-inner{grid-template-columns:1fr}.lst-right{height:320px;position:relative}.lst-left{padding:0 20px}}
 
-/* ===== ÜBER UNS (Image Curtain) ===== */
-.about-section{display:grid;grid-template-columns:1fr 1fr;min-height:640px}
-.about-img-wrap{position:relative;overflow:hidden}
-.about-img{width:100%;height:100%;object-fit:cover;object-position:center}
-.about-img-curtain{position:absolute;inset:0;background:var(--bg);transform-origin:right;z-index:1}
-.about-content{background:var(--cream);color:var(--dark-on-cream);padding:80px 56px;display:flex;flex-direction:column;justify-content:center}
-.about-content .eyebrow{color:var(--copper)}
-.about-content .eyebrow::before{background:var(--copper)}
-.about-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,3.5vw,54px);line-height:.95;letter-spacing:0.04em;margin-bottom:24px;color:var(--dark-on-cream)}
-.about-title em{color:var(--copper);font-style:normal}
-.about-body{font-size:16px;line-height:1.9;color:rgba(24,24,29,.7);margin-bottom:20px}
-.about-signature{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--copper);border-top:1px solid rgba(200,117,42,.25);padding-top:20px;margin-top:8px}
-.meister-badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.meister-badge{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(24,24,29,.55);letter-spacing:0.05em}
-.meister-dot{width:6px;height:6px;border-radius:50%;background:var(--copper);flex-shrink:0}
-@media(max-width:900px){.about-section{grid-template-columns:1fr}.about-img-wrap{height:340px}.about-content{padding:56px 28px}}
+/* ===== ENRICO SECTION ===== */
+.enrico{display:grid;grid-template-columns:1fr 1fr;min-height:620px}
+.enrico-img{position:relative;overflow:hidden}
+.enrico-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.enrico-img-cover{position:absolute;inset:0;background:var(--black);transform-origin:left;z-index:1}
+.enrico-text{background:var(--white);color:var(--black);padding:80px 56px;display:flex;flex-direction:column;justify-content:center}
+.enrico-tag{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--copper);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.enrico-tag::before{content:'';width:22px;height:1.5px;background:var(--copper)}
+.enrico-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,3.5vw,52px);line-height:.92;letter-spacing:.03em;margin-bottom:28px;color:var(--black)}
+.enrico-title em{color:var(--copper);font-style:normal}
+.enrico-body{font-size:15px;color:rgba(11,11,11,.65);line-height:1.9;margin-bottom:16px}
+.enrico-quote{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.04em;color:var(--copper);border-left:3px solid var(--copper);padding-left:20px;margin:24px 0;line-height:1.3}
+.enrico-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.enrico-badge{padding:8px 16px;border:1px solid rgba(11,11,11,.15);font-size:11px;letter-spacing:.08em;color:rgba(11,11,11,.5)}
+@media(max-width:900px){.enrico{grid-template-columns:1fr}.enrico-img{height:360px}.enrico-text{padding:56px 24px}}
 
-/* ===== BEFORE/AFTER ===== */
-.ba-section{padding:100px 48px;background:var(--bg2)}
-.ba-header{margin-bottom:56px}
-.ba-container{position:relative;max-width:900px;margin:0 auto;user-select:none}
-.ba-before,.ba-after{width:100%;height:480px;object-fit:cover;object-position:center;display:block}
-.ba-before{position:relative}
-.ba-after-wrap{position:absolute;inset:0;overflow:hidden;clip-path:inset(0 50% 0 0)}
-.ba-after{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
-.ba-handle{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:3px;background:var(--copper);cursor:ew-resize;z-index:10}
-.ba-handle-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--copper);display:flex;align-items:center;justify-content:center;gap:3px}
-.ba-handle-btn svg{width:16px;height:16px;fill:white}
-.ba-label{position:absolute;top:20px;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;background:rgba(9,9,11,.7);padding:6px 14px;color:var(--text)}
-.ba-label-before{left:20px}
-.ba-label-after{right:20px}
-.ba-hint{text-align:center;margin-top:18px;font-size:12px;color:var(--muted);letter-spacing:0.1em}
-@media(max-width:768px){.ba-section{padding:64px 20px}.ba-before,.ba-after{height:300px}}
+/* ===== ZAHLEN (copper) ===== */
+.zahlen{background:var(--copper);padding:80px 48px}
+.zahlen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.zahlen-item{text-align:center;padding:40px 16px}
+.zahlen-num{font-family:'Bebas Neue',sans-serif;font-size:72px;color:#fff;line-height:1;letter-spacing:.02em}
+.zahlen-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:8px}
+@media(max-width:768px){.zahlen{padding:56px 20px}.zahlen-grid{grid-template-columns:repeat(2,1fr)}}
 
-/* ===== PROZESS ===== */
-.process-section{padding:100px 48px;background:var(--cream)}
-.process-section .eyebrow{color:var(--copper)}
-.process-section .eyebrow::before{background:var(--copper)}
-.process-section .section-title{color:var(--dark-on-cream)}
-.process-section .section-title em{color:var(--copper)}
-.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:56px}
-.process-step{background:#fff;padding:36px 28px;border:1px solid rgba(200,117,42,.1)}
-.process-num{font-family:'Bebas Neue',sans-serif;font-size:64px;color:rgba(200,117,42,.15);line-height:1;margin-bottom:16px}
-.process-title{font-size:15px;font-weight:600;margin-bottom:10px;color:var(--dark-on-cream)}
-.process-text{font-size:14px;color:rgba(24,24,29,.6);line-height:1.8}
-@media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.process-section{padding:64px 20px}.process-grid{grid-template-columns:1fr}}
+/* ===== REFERENZEN (foto grid) ===== */
+.ref-section{padding:100px 48px;background:var(--black2)}
+.ref-tag{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--copper);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.ref-tag::before{content:'';width:22px;height:1.5px;background:var(--copper)}
+.ref-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,4vw,58px);letter-spacing:.03em;line-height:.95;margin-bottom:56px}
+.ref-title em{color:var(--copper);font-style:normal}
+.ref-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 300px;gap:3px}
+.ref-item{position:relative;overflow:hidden;cursor:pointer}
+.ref-item img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;will-change:transform}
+.ref-item:hover img{transform:scale(1.06)}
+.ref-item-overlay{position:absolute;inset:0;background:rgba(11,11,11,0);transition:background .4s}
+.ref-item:hover .ref-item-overlay{background:rgba(11,11,11,.5)}
+.ref-item-label{position:absolute;bottom:0;left:0;right:0;padding:20px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--white);opacity:0;transform:translateY(8px);transition:all .4s}
+.ref-item:hover .ref-item-label{opacity:1;transform:translateY(0)}
+.ref-item:first-child{grid-row:1/3}
+@media(max-width:900px){.ref-grid{grid-template-columns:1fr 1fr;grid-template-rows:240px 240px 240px}.ref-item:first-child{grid-row:auto}.ref-section{padding:64px 20px}}
+@media(max-width:600px){.ref-grid{grid-template-columns:1fr;grid-template-rows:auto}}
 
-/* ===== BEWERTUNGEN ===== */
-.reviews-section{padding:100px 48px;background:var(--bg)}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:56px}
-.review-card{background:var(--bg2);padding:36px 28px;border:1px solid var(--border)}
-.review-stars{color:var(--copper);font-size:15px;letter-spacing:3px;margin-bottom:16px}
-.review-text{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;font-style:italic;line-height:1.75;margin-bottom:20px;color:var(--text)}
-.review-author{font-size:13px;color:var(--muted);font-weight:500}
-.review-date{font-size:12px;color:rgba(232,227,216,.22);margin-top:4px}
-@media(max-width:900px){.reviews-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.reviews-section{padding:64px 20px}}
+/* ===== WARUM FAZEKAS ===== */
+.why-section{background:var(--black);padding:100px 48px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:56px}
+.why-card{background:var(--black2);padding:44px 36px;border-top:3px solid transparent;transition:border-color .3s}
+.why-card:hover{border-color:var(--copper)}
+.why-num{font-family:'Bebas Neue',sans-serif;font-size:64px;color:rgba(200,117,42,.15);line-height:1;margin-bottom:20px;transition:color .3s}
+.why-card:hover .why-num{color:rgba(200,117,42,.3)}
+.why-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.04em;margin-bottom:14px;color:var(--white)}
+.why-text{font-size:14px;color:var(--muted);line-height:1.85}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr}.why-section{padding:64px 20px}}
 
-/* ===== KONTAKT ===== */
-.contact-section{padding:100px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;background:var(--bg2)}
-.contact-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,3.5vw,52px);line-height:.95;letter-spacing:0.04em;margin-bottom:32px}
-.contact-title em{color:var(--copper);font-style:normal}
-.contact-detail{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
-.contact-detail:last-of-type{border:none}
-.cd-icon{width:38px;height:38px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.cd-icon svg{width:16px;height:16px;stroke:var(--copper);fill:none;stroke-width:1.5}
-.cd-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.cd-value{font-size:15px}
-.cd-value a{color:var(--text);transition:color .3s}
-.cd-value a:hover{color:var(--copper)}
-.notruf-box{margin-top:28px;padding:28px;background:rgba(200,117,42,.07);border:1px solid rgba(200,117,42,.22)}
-.notruf-num{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:0.04em;margin:8px 0}
-.notruf-num a{color:var(--text);transition:color .3s}
-.notruf-num a:hover{color:var(--copper)}
-.notruf-sub{font-size:13px;color:var(--muted);line-height:1.6}
-.contact-form{background:var(--bg3);padding:48px;border:1px solid var(--border)}
-.form-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.06em;margin-bottom:28px}
-.form-group{margin-bottom:16px}
-.form-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;display:block}
-.form-input,.form-select,.form-textarea{width:100%;padding:13px 15px;background:var(--bg4);border:1px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;transition:border-color .3s;outline:none}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--copper)}
-.form-textarea{height:110px;resize:none}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.form-submit{width:100%;padding:17px;background:var(--copper);color:#fff;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;font-family:'Inter',sans-serif;transition:background .3s;margin-top:6px;cursor:pointer;border:none}
-.form-submit:hover{background:var(--copper2)}
-.form-privacy{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.6}
-@media(max-width:900px){.contact-section{grid-template-columns:1fr;padding:64px 20px}.contact-form{padding:32px 20px}.form-row{grid-template-columns:1fr}}
+/* ===== CTA ABSCHLUSS ===== */
+.cta-section{padding:120px 48px;text-align:center;background:var(--black);border-top:1px solid var(--border)}
+.cta-over{font-size:11px;letter-spacing:.45em;text-transform:uppercase;color:var(--copper);margin-bottom:20px}
+.cta-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,9vw,120px);line-height:.88;letter-spacing:.02em;margin-bottom:16px}
+.cta-big em{color:var(--copper);font-style:normal}
+.cta-phone{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,52px);letter-spacing:.06em;color:var(--white);display:block;margin:28px 0;transition:color .3s}
+.cta-phone:hover{color:var(--copper)}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.cta-note{font-size:13px;color:var(--muted);margin-top:20px;letter-spacing:.05em}
+@media(max-width:768px){.cta-section{padding:80px 20px}}
 
-/* ===== MAP ===== */
-.map-section{height:360px;filter:grayscale(.85) brightness(.5);overflow:hidden}
-.map-section iframe{width:100%;height:100%;border:0;display:block}
+/* ===== KONTAKT + MAP ===== */
+.contact-strip{display:grid;grid-template-columns:1fr 1fr}
+.contact-info{background:var(--black2);padding:72px 48px;border-top:1px solid var(--border)}
+.contact-info .ref-tag{margin-bottom:12px}
+.contact-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3vw,44px);letter-spacing:.04em;line-height:.95;margin-bottom:32px}
+.c-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(244,240,232,.07)}
+.c-row:last-of-type{border:none}
+.c-icon{width:36px;height:36px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.c-icon svg{width:15px;height:15px;stroke:var(--copper);fill:none;stroke-width:1.5}
+.c-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.c-val{font-size:15px}
+.c-val a{transition:color .3s}
+.c-val a:hover{color:var(--copper)}
+.contact-form-wrap{background:var(--black3);padding:72px 48px;border-top:1px solid var(--border)}
+.form-head{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.06em;margin-bottom:28px}
+.fg{margin-bottom:15px}
+.fl{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.fi{width:100%;padding:12px 14px;background:rgba(244,240,232,.04);border:1px solid rgba(244,240,232,.08);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color .3s}
+.fi:focus{border-color:var(--copper)}
+textarea.fi{height:100px;resize:none}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fsub{width:100%;padding:15px;background:var(--copper);color:#fff;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:background .3s;margin-top:4px}
+.fsub:hover{background:var(--copper2)}
+.fprivacy{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.6}
+.fprivacy a{color:var(--copper)}
+.map-box{height:320px;filter:grayscale(.85) brightness(.5)}
+.map-box iframe{width:100%;height:100%;border:0}
+@media(max-width:900px){.contact-strip{grid-template-columns:1fr}.contact-info,.contact-form-wrap{padding:48px 20px}.frow{grid-template-columns:1fr}}
 
 /* ===== FOOTER ===== */
-footer{background:var(--bg);padding:56px 48px;border-top:1px solid var(--border)}
-.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.footer-brand-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.1em}
-.footer-brand-name span{color:var(--copper)}
-.footer-brand p{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.8;max-width:280px}
-.footer-col-title{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--copper);margin-bottom:18px}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-links a{font-size:14px;color:var(--muted);transition:color .3s}
-.footer-links a:hover{color:var(--text)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);flex-wrap:wrap;gap:12px}
-.footer-bottom a{color:var(--copper)}
-@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.footer-inner{grid-template-columns:1fr}footer{padding:40px 20px}}
+footer{background:var(--black);padding:40px 48px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.1em}
+.footer-logo b{color:var(--copper)}
+.footer-links-row{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links-row a{font-size:12px;color:var(--muted);transition:color .3s;letter-spacing:.05em}
+.footer-links-row a:hover{color:var(--white)}
+.footer-copy{font-size:11px;color:rgba(244,240,232,.3)}
+@media(max-width:600px){footer{padding:32px 20px;flex-direction:column;align-items:flex-start}}
 
 /* ===== WHATSAPP ===== */
-.whatsapp-btn{position:fixed;bottom:32px;right:32px;z-index:600;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.3);transition:transform .3s}
-.whatsapp-btn:hover{transform:scale(1.1)}
-.whatsapp-btn svg{width:27px;height:27px;fill:white}
-@media(max-width:768px){.whatsapp-btn{bottom:20px;right:20px}}
+.wa{position:fixed;bottom:28px;right:28px;z-index:600;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.3);transition:transform .3s}
+.wa:hover{transform:scale(1.1)}
+.wa svg{width:26px;height:26px;fill:white}
 
-/* ===== COOKIE ===== */
-.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--bg3);border-top:1px solid var(--border);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;transform:translateY(100%);transition:transform .5s}
-.cookie-banner.show{transform:translateY(0)}
-.cookie-text{font-size:12px;color:var(--muted);flex:1}
-.cookie-text a{color:var(--copper)}
-.cookie-btns{display:flex;gap:8px}
-.cookie-btn{padding:8px 18px;font-size:11px;letter-spacing:0.1em;cursor:pointer;font-family:'Inter',sans-serif;border:none;transition:all .3s}
-.cookie-accept{background:var(--copper);color:#fff}
-.cookie-decline{border:1px solid var(--border2);color:var(--muted);background:none}
+/* ===== STICKY CTA (erscheint nach 30% scroll) ===== */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--copper);padding:14px 24px;display:flex;align-items:center;justify-content:center;gap:20px;transform:translateY(100%);transition:transform .4s ease}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta-text{font-size:13px;font-weight:500;color:#fff}
+.sticky-cta-text strong{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.06em}
+.sticky-cta-btn{padding:10px 28px;background:#fff;color:var(--copper);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;white-space:nowrap;transition:background .25s}
+.sticky-cta-btn:hover{background:var(--black);color:#fff}
+.sticky-cta-close{color:rgba(255,255,255,.6);font-size:18px;cursor:pointer;padding:4px 8px;transition:color .25s}
+.sticky-cta-close:hover{color:#fff}
+@media(max-width:600px){.sticky-cta{gap:10px;padding:10px 16px}.sticky-cta-text{font-size:12px}}
 
 .magnetic{display:inline-block}
 .rv{will-change:transform,opacity}
@@ -243,302 +246,310 @@ footer{background:var(--bg);padding:56px 48px;border-top:1px solid var(--border)
 
 <!-- LOADER -->
 <div id="loader">
-  <div class="loader-title">FAZEKAS <span>DACH</span></div>
-  <div class="loader-bar"><div id="loader-fill"></div></div>
-  <div class="loader-sub">Dachdeckermeister · Zwickau</div>
+  <div class="ld-name">FAZEKAS <b>DACH</b></div>
+  <div class="ld-bar"><div id="ld-fill"></div></div>
+  <div class="ld-sub">Dachdeckermeister · Zwickau</div>
 </div>
 
 <!-- NAV -->
-<nav id="main-nav">
-  <a href="#" class="nav-logo">FAZEKAS <span>DACH</span></a>
+<nav id="nav">
+  <a href="#" class="nav-logo">FAZEKAS <b>DACH</b></a>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#referenzen">Referenzen</a></li>
-    <li><a href="#ueber-uns">Über uns</a></li>
+    <li><a href="#enrico">Über uns</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
-  <a href="tel:+493753909640" class="nav-cta magnetic">0375 390 96 40</a>
-  <button class="nav-mobile-btn" id="mobile-btn"><span></span><span></span><span></span></button>
+  <a href="tel:+493753909640" class="nav-phone">0375 390 96 40</a>
+  <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobile-menu">
-  <button class="mobile-close" id="mobile-close">✕</button>
+<div class="mob-menu" id="mob-menu">
+  <button class="mob-close" id="mob-close">✕</button>
   <a href="#leistungen">Leistungen</a>
   <a href="#referenzen">Referenzen</a>
-  <a href="#ueber-uns">Über uns</a>
+  <a href="#enrico">Über uns</a>
   <a href="#kontakt">Kontakt</a>
   <a href="tel:+493753909640" style="color:var(--copper)">0375 390 96 40</a>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hero-bg">
-    <div class="hero-slide active" style="background-image:url('https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&w=1920')"></div>
+  <div class="hero-slides">
+    <div class="hero-slide on" style="background-image:url('https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&w=1920')"></div>
     <div class="hero-slide" style="background-image:url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&w=1920')"></div>
     <div class="hero-slide" style="background-image:url('https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&w=1920')"></div>
   </div>
-  <div class="hero-overlay"></div>
+  <div class="hero-dim"></div>
+  <div class="hero-dim2"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow" id="hero-eyebrow">Meisterbetrieb aus Zwickau</div>
-    <h1 class="hero-title" id="hero-title">IHR DACH.<br><em>UNSERE</em><br>MEISTERARBEIT.</h1>
-    <p class="hero-sub" id="hero-sub">Dacheindeckung, Sanierung und Klempnerei aus einer Hand — präzise ausgeführt, termingerecht geliefert.</p>
-    <div class="hero-btns" id="hero-btns">
-      <a href="#kontakt" class="btn-primary magnetic">Kostenlos anfragen</a>
-      <a href="#leistungen" class="btn-outline">Unsere Leistungen</a>
-    </div>
-  </div>
-  <div class="hero-badge" id="hero-badge">
-    <div class="hero-badge-top">seit</div>
-    <div class="hero-badge-main">2010+</div>
-    <div class="hero-badge-sub">Meisterbetrieb</div>
-  </div>
-  <div class="hero-dots">
-    <div class="hero-dot active" data-slide="0"></div>
-    <div class="hero-dot" data-slide="1"></div>
-    <div class="hero-dot" data-slide="2"></div>
-  </div>
-</section>
-
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-item rv"><div class="stat-num"><span class="counter" data-target="15">0</span>+</div><div class="stat-label">Jahre Erfahrung</div></div>
-  <div class="stat-item rv"><div class="stat-num"><span class="counter" data-target="500">0</span>+</div><div class="stat-label">Abgeschlossene Projekte</div></div>
-  <div class="stat-item rv"><div class="stat-num">24h</div><div class="stat-label">Reaktionszeit</div></div>
-  <div class="stat-item rv"><div class="stat-num">100%</div><div class="stat-label">Meisterqualität</div></div>
-</div>
-
-<!-- LEISTUNGEN (Horizontal Scroll) -->
-<section class="services-section" id="leistungen">
-  <div class="services-header">
-    <div class="eyebrow rv">Unsere Leistungen</div>
-    <h2 class="section-title rv">ALLES AUS<br><em>EINER HAND.</em></h2>
-    <p class="section-sub rv">Von der Neueindeckung bis zur Notreparatur — wir decken alles ab, was Ihr Dach braucht.</p>
-  </div>
-  <div id="cards-track">
-    <div class="s-card">
-      <div class="s-card-img"><img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&w=600" alt="Dacheindeckung" loading="lazy"><div class="s-card-img-overlay"></div></div>
-      <div class="s-card-body"><div class="s-card-num">01</div><div class="s-card-title">DACHEINDECKUNG</div><div class="s-card-text">Neueindeckung mit Ziegel, Schiefer, Bitumen oder Metall — fachgerecht und wetterfest ausgeführt.</div></div>
-    </div>
-    <div class="s-card">
-      <div class="s-card-img"><img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&w=600" alt="Dachsanierung" loading="lazy"><div class="s-card-img-overlay"></div></div>
-      <div class="s-card-body"><div class="s-card-num">02</div><div class="s-card-title">DACHSANIERUNG</div><div class="s-card-text">Altes Dach, neue Leistung — wir sanieren komplett oder teilweise, inkl. Unterdach und Dämmung.</div></div>
-    </div>
-    <div class="s-card">
-      <div class="s-card-img"><img src="https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&w=600" alt="Dachklempnerei" loading="lazy"><div class="s-card-img-overlay"></div></div>
-      <div class="s-card-body"><div class="s-card-num">03</div><div class="s-card-title">DACHKLEMPNEREI</div><div class="s-card-text">Rinnen, Fallrohre, Kehlbleche, Dachrandabschlüsse — alles in Metall, präzise und dauerhaft dicht.</div></div>
-    </div>
-    <div class="s-card">
-      <div class="s-card-img"><img src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&w=600" alt="Gerüstbau" loading="lazy"><div class="s-card-img-overlay"></div></div>
-      <div class="s-card-body"><div class="s-card-num">04</div><div class="s-card-title">GERÜSTBAU</div><div class="s-card-text">Eigen aufgebaut, eigen abgebaut — wir brauchen keinen Subunternehmer. Spart Zeit und Kosten.</div></div>
-    </div>
-    <div class="s-card">
-      <div class="s-card-img"><img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&w=600" alt="Dachreparatur" loading="lazy"><div class="s-card-img-overlay"></div></div>
-      <div class="s-card-body"><div class="s-card-num">05</div><div class="s-card-title">DACHREPARATUR</div><div class="s-card-text">Undichte Stellen, beschädigte Ziegel, lose Bleche — wir kommen schnell und reparieren nachhaltig.</div></div>
-    </div>
-    <div class="s-card">
-      <div class="s-card-img"><img src="https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&w=600" alt="Wärmedämmung" loading="lazy"><div class="s-card-img-overlay"></div></div>
-      <div class="s-card-body"><div class="s-card-num">06</div><div class="s-card-title">WÄRMEDÄMMUNG</div><div class="s-card-text">Energie sparen von oben — fachgerechte Zwischensparren- und Aufsparrendämmung für mehr Wohnkomfort.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ÜBER UNS (Image Curtain) -->
-<section class="about-section" id="ueber-uns">
-  <div class="about-img-wrap">
-    <img class="about-img" src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&w=900" alt="Enrico Fazekas Dachdeckermeister">
-    <div class="about-img-curtain" id="about-curtain"></div>
-  </div>
-  <div class="about-content">
-    <div class="eyebrow">Über uns</div>
-    <h2 class="about-title rv">ENRICO FAZEKAS —<br><em>IHR MEISTER</em><br>VOR ORT.</h2>
-    <p class="about-body rv">Als Dachdeckermeister in Zwickau-Weißenborn kenne ich die Häuser der Region — ihre Stärken und ihre Schwachstellen. Kein anonymes Großunternehmen, kein Subunternehmer-Chaos. Bei mir haben Sie immer einen direkten Ansprechpartner.</p>
-    <p class="about-body rv">Ich führe jedes Projekt persönlich mit meinem Team durch — vom ersten Angebot bis zur Abnahme auf dem Dach.</p>
-    <div class="about-signature rv">— Enrico Fazekas, Dachdeckermeister</div>
-    <div class="meister-badges rv">
-      <div class="meister-badge"><div class="meister-dot"></div>Meisterbetrieb</div>
-      <div class="meister-badge"><div class="meister-dot"></div>Innungsfachbetrieb</div>
-      <div class="meister-badge"><div class="meister-dot"></div>Zwickau & Umgebung</div>
-      <div class="meister-badge"><div class="meister-dot"></div>Eigener Gerüstbau</div>
-    </div>
-  </div>
-</section>
-
-<!-- BEFORE / AFTER -->
-<section class="ba-section" id="referenzen">
-  <div class="ba-header">
-    <div class="eyebrow rv">Referenzen</div>
-    <h2 class="section-title rv">VORHER. <em>NACHHER.</em></h2>
-    <p class="section-sub rv" style="margin-top:14px">Ziehen Sie den Regler und sehen Sie selbst, was eine Meistersanierung ausmacht.</p>
-  </div>
-  <div class="ba-container" id="ba-container">
-    <img class="ba-before" src="https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg?auto=compress&w=900" alt="Vorher">
-    <div class="ba-after-wrap" id="ba-after-wrap">
-      <img class="ba-after" src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&w=900" alt="Nachher">
-    </div>
-    <div class="ba-handle" id="ba-handle">
-      <div class="ba-handle-btn">
-        <svg viewBox="0 0 24 24"><path d="M8 5l-7 7 7 7M16 5l7 7-7 7"/></svg>
+    <div class="hero-tag" id="htag">Meisterbetrieb · Zwickau-Weißenborn</div>
+    <h1 class="hero-h1">
+      <span class="hero-h1-line"><span class="hero-h1-inner" id="hl1">IHR DACH.</span></span>
+      <span class="hero-h1-line"><span class="hero-h1-inner" id="hl2">UNSER</span></span>
+      <span class="hero-h1-line"><span class="hero-h1-inner" id="hl3" style="color:var(--copper)">MEISTERWERK.</span></span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-sub" id="hsub">Dacheindeckung · Sanierung · Klempnerei · Gerüstbau<br>Aus einer Hand — direkt vom Meister.</p>
+      <div class="hero-cta-wrap" id="hcta">
+        <div class="hero-num">Jetzt anrufen: <span>0375 390 96 40</span></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#kontakt" class="btn-cop magnetic">Angebot anfragen</a>
+          <a href="#leistungen" class="btn-ghost">Leistungen</a>
+        </div>
       </div>
     </div>
-    <div class="ba-label ba-label-before">Vorher</div>
-    <div class="ba-label ba-label-after">Nachher</div>
   </div>
-  <div class="ba-hint rv">← Ziehen Sie den Regler →</div>
-</section>
-
-<!-- PROZESS -->
-<section class="process-section" id="prozess">
-  <div class="eyebrow rv">So arbeiten wir</div>
-  <h2 class="section-title rv">VON DER ANFRAGE<br><em>BIS ZUM FERTIGEN DACH.</em></h2>
-  <div class="process-grid">
-    <div class="process-step rv"><div class="process-num">01</div><div class="process-title">Kostenlose Beratung</div><div class="process-text">Wir kommen zu Ihnen, schauen uns das Dach an und erstellen ein ehrliches, detailliertes Angebot — ohne Verstecktes.</div></div>
-    <div class="process-step rv"><div class="process-num">02</div><div class="process-title">Terminplanung</div><div class="process-text">Sie entscheiden, wann es losgeht. Wir planen zuverlässig und halten Termine ein — auch wenns mal eng wird.</div></div>
-    <div class="process-step rv"><div class="process-num">03</div><div class="process-title">Ausführung</div><div class="process-text">Meisterbetrieb heißt: der Chef schaut selbst drauf. Sauber, termingerecht und mit hochwertigen Materialien.</div></div>
-    <div class="process-step rv"><div class="process-num">04</div><div class="process-title">Abnahme & Garantie</div><div class="process-text">Gemeinsame Abnahme, vollständige Dokumentation. Auf unsere Arbeit geben wir Garantie — das ist selbstverständlich.</div></div>
+  <div class="hero-dots" id="hdots">
+    <div class="hero-dot on" data-s="0"></div>
+    <div class="hero-dot" data-s="1"></div>
+    <div class="hero-dot" data-s="2"></div>
   </div>
 </section>
 
-<!-- BEWERTUNGEN -->
-<section class="reviews-section">
-  <div class="eyebrow rv">Google Bewertungen</div>
-  <h2 class="section-title rv">WAS UNSERE<br><em>KUNDEN SAGEN.</em></h2>
-  <div class="reviews-grid">
-    <div class="review-card rv">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-text">„Sehr zuverlässig und sauber gearbeitet. Das Angebot war fair, der Termin wurde exakt eingehalten. Absolut empfehlenswert!"</div>
-      <div class="review-author">Thomas K., Zwickau</div>
-      <div class="review-date">Februar 2025 · Google</div>
+<!-- CATCH SECTION -->
+<section class="catch" id="catch">
+  <h2 class="catch-q rv">WANN HABEN SIE IHR DACH<br>ZULETZT WIRKLICH<br><em>ÜBERPRÜFEN LASSEN?</em></h2>
+  <p class="catch-body rv">Ein undichtes Dach wird teurer — je länger Sie warten. Schimmel, Feuchte, Strukturschäden. Eine frühe Prüfung kostet Sie nichts. Eine späte Sanierung sehr viel.</p>
+  <a href="#kontakt" class="catch-cta magnetic rv">
+    Jetzt kostenlos prüfen lassen
+    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <div class="catch-note rv">Kostenlose Besichtigung · Unverbindliches Angebot · Kein Kleingedrucktes</div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="lst-section" id="leistungen">
+  <div class="lst-inner">
+    <div class="lst-left">
+      <div class="lst-tag rv">Leistungen</div>
+      <h2 class="lst-title rv">ALLES FÜR<br><em>IHR DACH.</em></h2>
+
+      <div class="lst-item active" data-photo="0">
+        <div class="lst-item-head">
+          <span class="lst-item-num">01</span>
+          <span class="lst-item-name">DACHEINDECKUNG</span>
+          <span class="lst-item-arrow">+</span>
+        </div>
+        <div class="lst-item-body"><p>Neueindeckung mit Ziegel, Schiefer, Bitumen oder Metall — fachgerecht, wetterfest und nach Ihren Wünschen. Wir beraten Sie zur besten Lösung für Ihr Gebäude.</p></div>
+      </div>
+      <div class="lst-item" data-photo="1">
+        <div class="lst-item-head">
+          <span class="lst-item-num">02</span>
+          <span class="lst-item-name">DACHSANIERUNG</span>
+          <span class="lst-item-arrow">+</span>
+        </div>
+        <div class="lst-item-body"><p>Altes Dach, neue Leistung. Wir sanieren komplett oder teilweise — inklusive Unterdach, Dämmung und Klempnerarbeiten. Alles aus einer Hand.</p></div>
+      </div>
+      <div class="lst-item" data-photo="2">
+        <div class="lst-item-head">
+          <span class="lst-item-num">03</span>
+          <span class="lst-item-name">DACHKLEMPNEREI</span>
+          <span class="lst-item-arrow">+</span>
+        </div>
+        <div class="lst-item-body"><p>Dachrinnen, Fallrohre, Kehlbleche, Gauben-Verbleichungen — präzise in Kupfer, Zink oder Aluminium ausgeführt. Dicht. Dauerhaft.</p></div>
+      </div>
+      <div class="lst-item" data-photo="3">
+        <div class="lst-item-head">
+          <span class="lst-item-num">04</span>
+          <span class="lst-item-name">GERÜSTBAU</span>
+          <span class="lst-item-arrow">+</span>
+        </div>
+        <div class="lst-item-body"><p>Eigener Gerüstbau — kein Subunternehmer, keine Wartezeiten. Das spart Zeit und Kosten. Wir stellen auf, wir bauen ab.</p></div>
+      </div>
+      <div class="lst-item" data-photo="4">
+        <div class="lst-item-head">
+          <span class="lst-item-num">05</span>
+          <span class="lst-item-name">WÄRMEDÄMMUNG</span>
+          <span class="lst-item-arrow">+</span>
+        </div>
+        <div class="lst-item-body"><p>Zwischensparren- und Aufsparrendämmung für mehr Komfort und weniger Heizkosten. Förderung möglich — wir helfen Ihnen dabei.</p></div>
+      </div>
     </div>
-    <div class="review-card rv">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-text">„Nach dem Sturm hatten wir einen Notfall. Fazekas war innerhalb von 24 Stunden da und hat alles repariert. Toller Service!"</div>
-      <div class="review-author">Familie W., Reinsdorf</div>
-      <div class="review-date">Januar 2025 · Google</div>
-    </div>
-    <div class="review-card rv">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-text">„Komplettsanierung unseres Altbaudachs — alles perfekt organisiert, freundliches Team, top Ergebnis. Gerne wieder."</div>
-      <div class="review-author">Petra M., Wilkau-Haßlau</div>
-      <div class="review-date">Oktober 2024 · Google</div>
+    <div class="lst-right">
+      <img class="lst-photo on" src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&w=800" alt="Dacheindeckung">
+      <img class="lst-photo" src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&w=800" alt="Dachsanierung">
+      <img class="lst-photo" src="https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&w=800" alt="Dachklempnerei">
+      <img class="lst-photo" src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&w=800" alt="Gerüstbau">
+      <img class="lst-photo" src="https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&w=800" alt="Wärmedämmung">
+      <div class="lst-photo-curtain" id="lst-curtain"></div>
     </div>
   </div>
+</section>
+
+<!-- ENRICO -->
+<section class="enrico" id="enrico">
+  <div class="enrico-img">
+    <img src="https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&w=900" alt="Enrico Fazekas Dachdeckermeister Zwickau">
+    <div class="enrico-img-cover" id="enrico-cover"></div>
+  </div>
+  <div class="enrico-text">
+    <div class="enrico-tag rv">Über uns</div>
+    <h2 class="enrico-title rv">ENRICO FAZEKAS —<br><em>DER MEISTER</em><br>SCHAUT SELBST DRAUF.</h2>
+    <p class="enrico-body rv">Ich bin Enrico Fazekas — Dachdeckermeister in Zwickau-Weißenborn. Kein Büro, das Aufträge verteilt. Kein Subunternehmer, der dann kommt. Bei mir sind Sie direkt beim Chef.</p>
+    <div class="enrico-quote rv">"Ein Dach das hält, macht keinen Lärm. Genau das bauen wir."</div>
+    <p class="enrico-body rv">Mein Team kennt jedes Ziegelsystem, jeden Bleityp und jeden Dachstuhl in der Region. Wir arbeiten sauber, termingerecht — und räumen auch ordentlich hinter uns auf.</p>
+    <div class="enrico-badges rv">
+      <div class="enrico-badge">Dachdeckermeister</div>
+      <div class="enrico-badge">Innungsfachbetrieb</div>
+      <div class="enrico-badge">Eigener Gerüstbau</div>
+      <div class="enrico-badge">Zwickau & Umgebung</div>
+    </div>
+  </div>
+</section>
+
+<!-- ZAHLEN -->
+<div class="zahlen">
+  <div class="zahlen-grid">
+    <div class="zahlen-item"><div class="zahlen-num"><span class="counter" data-target="15">0</span>+</div><div class="zahlen-label">Jahre Erfahrung</div></div>
+    <div class="zahlen-item"><div class="zahlen-num"><span class="counter" data-target="500">0</span>+</div><div class="zahlen-label">Abgeschlossene Projekte</div></div>
+    <div class="zahlen-item"><div class="zahlen-num"><span class="counter" data-target="100">0</span>%</div><div class="zahlen-label">Meisterqualität</div></div>
+    <div class="zahlen-item"><div class="zahlen-num"><span class="counter" data-target="3">0</span></div><div class="zahlen-label">Mann starkes Team</div></div>
+  </div>
+</div>
+
+<!-- REFERENZEN -->
+<section class="ref-section" id="referenzen">
+  <div class="ref-tag rv">Referenzen</div>
+  <h2 class="ref-title rv">PROJEKTE AUS<br><em>ZWICKAU & UMGEBUNG.</em></h2>
+  <div class="ref-grid">
+    <div class="ref-item rv">
+      <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&w=900" alt="Dachsanierung Zwickau" loading="lazy">
+      <div class="ref-item-overlay"></div>
+      <div class="ref-item-label">Dachsanierung · Zwickau</div>
+    </div>
+    <div class="ref-item rv">
+      <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&w=600" alt="Dacheindeckung" loading="lazy">
+      <div class="ref-item-overlay"></div>
+      <div class="ref-item-label">Neueindeckung · Reinsdorf</div>
+    </div>
+    <div class="ref-item rv">
+      <img src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&w=600" alt="Gerüstbau" loading="lazy">
+      <div class="ref-item-overlay"></div>
+      <div class="ref-item-label">Gerüstbau · Wilkau-Haßlau</div>
+    </div>
+    <div class="ref-item rv">
+      <img src="https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&w=600" alt="Dachklempnerei" loading="lazy">
+      <div class="ref-item-overlay"></div>
+      <div class="ref-item-label">Klempnerei · Zwickau</div>
+    </div>
+    <div class="ref-item rv">
+      <img src="https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&w=600" alt="Wärmedämmung" loading="lazy">
+      <div class="ref-item-overlay"></div>
+      <div class="ref-item-label">Dämmung · Mülsen</div>
+    </div>
+  </div>
+</section>
+
+<!-- WARUM FAZEKAS -->
+<section class="why-section">
+  <div class="ref-tag rv">Warum Fazekas</div>
+  <h2 class="ref-title rv">DREI GUTE<br><em>GRÜNDE.</em></h2>
+  <div class="why-grid">
+    <div class="why-card rv">
+      <div class="why-num">01</div>
+      <div class="why-title">DER MEISTER KOMMT SELBST</div>
+      <div class="why-text">Kein Vertrieb, kein Subunternehmer. Enrico Fazekas ist persönlich bei jedem Projekt dabei — von der Besichtigung bis zur Abnahme auf dem Dach.</div>
+    </div>
+    <div class="why-card rv">
+      <div class="why-num">02</div>
+      <div class="why-title">EIGENER GERÜSTBAU</div>
+      <div class="why-text">Wir bauen das Gerüst selbst auf und ab. Keine Wartezeiten, keine Abstimmungsprobleme, keine versteckten Kosten durch Drittfirmen.</div>
+    </div>
+    <div class="why-card rv">
+      <div class="why-num">03</div>
+      <div class="why-title">FESTER PREIS. KEINE ÜBERRASCHUNGEN.</div>
+      <div class="why-text">Sie bekommen ein klares Angebot. Was drin steht, wird geliefert. Sollte sich etwas ändern, sprechen wir vorher — nicht hinterher.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA ABSCHLUSS -->
+<section class="cta-section">
+  <div class="cta-over rv">Bereit für Ihr Projekt?</div>
+  <h2 class="cta-big rv">JETZT ANFRAGEN.<br><em>KOSTENLOS.</em></h2>
+  <a href="tel:+493753909640" class="cta-phone rv">0375 390 96 40</a>
+  <div class="cta-btns rv">
+    <a href="#kontakt" class="btn-cop magnetic">Online anfragen</a>
+    <a href="tel:+493753909640" class="btn-ghost">Direkt anrufen</a>
+  </div>
+  <div class="cta-note rv">Mo – Fr 7:00 – 17:00 Uhr · Kostenlose Besichtigung vor Ort</div>
 </section>
 
 <!-- KONTAKT -->
-<section class="contact-section" id="kontakt">
-  <div class="contact-info rv">
-    <div class="eyebrow">Kontakt</div>
-    <h2 class="contact-title">JETZT ANFRAGEN —<br><em>KOSTENLOS.</em></h2>
-    <div class="contact-detail">
-      <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
-      <div><div class="cd-label">Telefon</div><div class="cd-value"><a href="tel:+493753909640">0375 390 96 40</a></div></div>
+<div class="contact-strip" id="kontakt">
+  <div class="contact-info">
+    <div class="ref-tag">Kontakt</div>
+    <h2 class="contact-title">ENRICO FAZEKAS<br>DACHDECKERMEISTER</h2>
+    <div class="c-row">
+      <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+      <div><div class="c-label">Telefon</div><div class="c-val"><a href="tel:+493753909640">0375 390 96 40</a></div></div>
     </div>
-    <div class="contact-detail">
-      <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-      <div><div class="cd-label">Adresse</div><div class="cd-value">Niederhohndorfer Str. 64A<br>08058 Zwickau-Weißenborn</div></div>
+    <div class="c-row">
+      <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+      <div><div class="c-label">Adresse</div><div class="c-val">Niederhohndorfer Str. 64A<br>08058 Zwickau-Weißenborn</div></div>
     </div>
-    <div class="contact-detail">
-      <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-      <div><div class="cd-label">Erreichbarkeit</div><div class="cd-value">Mo – Fr: 7:00 – 17:00 Uhr<br>Sa nach Absprache</div></div>
-    </div>
-    <div class="notruf-box">
-      <div class="eyebrow" style="margin-bottom:8px">Schnell reagieren</div>
-      <div class="notruf-num"><a href="tel:+493753909640">0375 390 96 40</a></div>
-      <div class="notruf-sub">Schreiben Sie uns — wir melden uns in der Regel noch am selben Werktag mit einem Angebot zurück.</div>
+    <div class="c-row">
+      <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <div><div class="c-label">Bürozeiten</div><div class="c-val">Mo – Fr: 7:00 – 17:00 Uhr<br>Sa nach Absprache</div></div>
     </div>
   </div>
-  <div class="contact-form rv">
-    <div class="form-title">ANFRAGE SENDEN</div>
+  <div class="contact-form-wrap">
+    <div class="form-head">ANFRAGE SENDEN</div>
     <form action="https://formspree.io/f/mlgpooqw" method="POST">
-      <div class="form-row">
-        <div class="form-group"><label class="form-label">Vorname</label><input class="form-input" type="text" name="vorname" required></div>
-        <div class="form-group"><label class="form-label">Nachname</label><input class="form-input" type="text" name="nachname" required></div>
+      <div class="frow">
+        <div class="fg"><label class="fl">Vorname</label><input class="fi" type="text" name="vorname" required></div>
+        <div class="fg"><label class="fl">Nachname</label><input class="fi" type="text" name="nachname" required></div>
       </div>
-      <div class="form-group"><label class="form-label">Telefon</label><input class="form-input" type="tel" name="telefon"></div>
-      <div class="form-group">
-        <label class="form-label">Leistung</label>
-        <select class="form-select form-input" name="leistung">
+      <div class="fg"><label class="fl">Telefon</label><input class="fi" type="tel" name="telefon"></div>
+      <div class="fg">
+        <label class="fl">Leistung</label>
+        <select class="fi" name="leistung">
           <option value="">Bitte wählen...</option>
           <option>Dacheindeckung (Neubau)</option>
           <option>Dachsanierung</option>
           <option>Dachklempnerei</option>
-          <option>Dachreparatur / Notfall</option>
+          <option>Dachreparatur</option>
           <option>Wärmedämmung</option>
           <option>Gerüstbau</option>
-          <option>Kostenloses Angebot</option>
+          <option>Kostenlose Besichtigung</option>
         </select>
       </div>
-      <div class="form-group"><label class="form-label">Nachricht</label><textarea class="form-textarea" name="nachricht" placeholder="Kurz beschreiben was Sie benötigen..."></textarea></div>
-      <button type="submit" class="form-submit magnetic">Anfrage absenden</button>
-      <div class="form-privacy">Mit dem Absenden stimmen Sie unserer <a href="#" style="color:var(--copper)">Datenschutzerklärung</a> zu.</div>
+      <div class="fg"><label class="fl">Nachricht</label><textarea class="fi" name="nachricht" placeholder="Was kann ich für Sie tun?"></textarea></div>
+      <button type="submit" class="fsub magnetic">Anfrage absenden</button>
+      <div class="fprivacy">Mit Absenden stimmen Sie der <a href="#">Datenschutzerklärung</a> zu.</div>
     </form>
   </div>
-</section>
-
-<!-- MAP -->
-<div class="map-section">
+</div>
+<div class="map-box">
   <iframe src="https://www.google.com/maps?q=Niederhohndorfer+Str+64A+08058+Zwickau&output=embed" allowfullscreen loading="lazy"></iframe>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-brand-name">FAZEKAS <span>DACH</span></div>
-      <p>Dachdeckermeister in Zwickau und Umgebung. Meisterbetrieb für Eindeckung, Sanierung und Klempnerei.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Leistungen</div>
-      <ul class="footer-links">
-        <li><a href="#leistungen">Dacheindeckung</a></li>
-        <li><a href="#leistungen">Dachsanierung</a></li>
-        <li><a href="#leistungen">Klempnerei</a></li>
-        <li><a href="#leistungen">Gerüstbau</a></li>
-        <li><a href="#leistungen">Wärmedämmung</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Unternehmen</div>
-      <ul class="footer-links">
-        <li><a href="#ueber-uns">Über uns</a></li>
-        <li><a href="#referenzen">Referenzen</a></li>
-        <li><a href="#prozess">Ablauf</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Kontakt</div>
-      <ul class="footer-links">
-        <li><a href="tel:+493753909640">0375 390 96 40</a></li>
-        <li>Niederhohndorfer Str. 64A</li>
-        <li>08058 Zwickau</li>
-        <li style="margin-top:8px;color:var(--copper);font-size:13px">Schnelle Rückmeldung</li>
-      </ul>
-    </div>
+  <div class="footer-logo">FAZEKAS <b>DACH</b></div>
+  <div class="footer-links-row">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#referenzen">Referenzen</a>
+    <a href="#enrico">Über uns</a>
+    <a href="#kontakt">Kontakt</a>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Enrico Fazekas Dachdeckermeister UG · Zwickau</span>
-    <span>Website by <a href="https://www.valoris-auftragsstruktur.de">VALORIS Webdesign</a></span>
-  </div>
+  <div class="footer-copy">© 2026 Enrico Fazekas Dachdeckermeister UG · <a href="https://www.valoris-auftragsstruktur.de" style="color:var(--copper)">VALORIS Webdesign</a></div>
 </footer>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/4915254190819" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a href="https://wa.me/4915254190819" class="wa" target="_blank" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2C6.477 2 2 6.477 2 12.004c0 1.744.454 3.384 1.243 4.814L2 22l5.347-1.225A9.956 9.956 0 0012.004 22C17.531 22 22 17.523 22 11.996 22 6.469 17.531 2 12.004 2z"/></svg>
 </a>
 
-<!-- COOKIE -->
-<div class="cookie-banner" id="cookie-banner">
-  <div class="cookie-text">Wir verwenden Cookies für eine bessere Nutzererfahrung. <a href="#">Datenschutz</a></div>
-  <div class="cookie-btns">
-    <button class="cookie-btn cookie-accept" id="cookie-accept">Akzeptieren</button>
-    <button class="cookie-btn cookie-decline" id="cookie-decline">Ablehnen</button>
-  </div>
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta-text"><strong>0375 390 96 40</strong> — Kostenlose Besichtigung anfragen</div>
+  <a href="#kontakt" class="sticky-cta-btn">Jetzt anfragen</a>
+  <span class="sticky-cta-close" id="sticky-close">✕</span>
 </div>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"RoofingContractor","name":"Enrico Fazekas Dachdeckermeister UG","telephone":"+493753909640","address":{"@type":"PostalAddress","streetAddress":"Niederhohndorfer Straße 64A","addressLocality":"Zwickau","postalCode":"08058","addressCountry":"DE"},"openingHours":"Mo-Fr 07:00-17:00","priceRange":"€€"}
+{"@context":"https://schema.org","@type":"RoofingContractor","name":"Enrico Fazekas Dachdeckermeister UG","telephone":"+493753909640","address":{"@type":"PostalAddress","streetAddress":"Niederhohndorfer Straße 64A","addressLocality":"Zwickau","postalCode":"08058","addressCountry":"DE"},"openingHours":"Mo-Fr 07:00-17:00"}
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -546,18 +557,17 @@ footer{background:var(--bg);padding:56px 48px;border-top:1px solid var(--border)
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
-// Safety timeout
 const safetyTimer = setTimeout(() => {
   document.getElementById('loader').style.display = 'none';
   document.querySelectorAll('.rv').forEach(el => { el.style.opacity=1; el.style.transform='none'; });
 }, 4000);
 
 // LOADER
-gsap.to('#loader-fill', {
-  width:'100%', duration:1.2, ease:'power2.inOut',
+gsap.to('#ld-fill', {
+  width:'100%', duration:1.1, ease:'power2.inOut',
   onComplete: () => {
     gsap.to('#loader', {
-      yPercent:-100, duration:0.8, ease:'power4.inOut',
+      yPercent:-100, duration:0.75, ease:'power4.inOut',
       onComplete: () => {
         clearTimeout(safetyTimer);
         document.getElementById('loader').style.display = 'none';
@@ -566,7 +576,6 @@ gsap.to('#loader-fill', {
     });
   }
 });
-
 window.addEventListener('load', () => {
   setTimeout(() => {
     if (document.getElementById('loader').style.display !== 'none') {
@@ -578,157 +587,132 @@ window.addEventListener('load', () => {
 });
 
 function initPage() {
-  // HERO animations
-  gsap.to('#hero-eyebrow', { opacity:1, y:0, duration:0.8, ease:'power3.out', delay:0.1 });
-  gsap.set('#hero-title', { opacity:0, y:40 });
-  gsap.to('#hero-title', { opacity:1, y:0, duration:1, ease:'power3.out', delay:0.3 });
-  gsap.to('#hero-sub',  { opacity:1, y:0, duration:0.9, ease:'power3.out', delay:0.5 });
-  gsap.to('#hero-btns', { opacity:1, y:0, duration:0.9, ease:'power3.out', delay:0.65 });
-  gsap.to('#hero-badge',{ opacity:1, scale:1, duration:0.9, ease:'back.out(1.4)', delay:0.9 });
 
-  // Ken Burns Hero
+  // HERO TITLE — staggered line reveal
+  gsap.to('#htag', { opacity:1, y:0, duration:0.7, ease:'power3.out', delay:0.1 });
+  gsap.to('#hl1',  { y:'0%', duration:0.9, ease:'power4.out', delay:0.25 });
+  gsap.to('#hl2',  { y:'0%', duration:0.9, ease:'power4.out', delay:0.38 });
+  gsap.to('#hl3',  { y:'0%', duration:0.9, ease:'power4.out', delay:0.51 });
+  gsap.to('#hsub', { opacity:1, y:0, duration:0.8, ease:'power3.out', delay:0.7 });
+  gsap.to('#hcta', { opacity:1, y:0, duration:0.8, ease:'power3.out', delay:0.85 });
+
+  // KEN BURNS + HERO SLIDESHOW
   const slides = document.querySelectorAll('.hero-slide');
-  let current = 0;
-  function kenBurns(slide) {
-    gsap.fromTo(slide, { scale:1.06 }, { scale:1, duration:7, ease:'none' });
+  let cur = 0;
+  function kenBurns(s) {
+    gsap.fromTo(s, { scale:1.07 }, { scale:1, duration:7, ease:'none' });
   }
   kenBurns(slides[0]);
-  setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-    kenBurns(slides[current]);
-    document.querySelectorAll('.hero-dot').forEach((d,i) => d.classList.toggle('active', i===current));
-  }, 6000);
+  const slideInterval = setInterval(() => {
+    slides[cur].classList.remove('on');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('on');
+    kenBurns(slides[cur]);
+    document.querySelectorAll('.hero-dot').forEach((d,i) => d.classList.toggle('on', i===cur));
+  }, 6500);
   document.querySelectorAll('.hero-dot').forEach(dot => {
     dot.addEventListener('click', () => {
-      slides[current].classList.remove('active');
-      current = parseInt(dot.dataset.slide);
-      slides[current].classList.add('active');
-      kenBurns(slides[current]);
-      document.querySelectorAll('.hero-dot').forEach((d,i) => d.classList.toggle('active', i===current));
+      clearInterval(slideInterval);
+      slides[cur].classList.remove('on');
+      cur = parseInt(dot.dataset.s);
+      slides[cur].classList.add('on');
+      kenBurns(slides[cur]);
+      document.querySelectorAll('.hero-dot').forEach((d,i) => d.classList.toggle('on', i===cur));
     });
   });
 
-  // Nav hide on scroll
+  // NAV scroll class
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // NAV HIDE on scroll
   let lastY = 0;
   ScrollTrigger.create({ onUpdate: self => {
     const y = self.scroll();
-    gsap.to('nav', { y: y > lastY && y > 100 ? -80 : 0, duration:0.4, ease:'power2.out' });
+    gsap.to('#nav', { y: y > lastY && y > 120 ? -80 : 0, duration:.4, ease:'power2.out' });
     lastY = y;
   }});
 
-  // Reveals
+  // REVEALS
   gsap.utils.toArray('.rv').forEach(el => {
-    gsap.set(el, { opacity:0, y:48 });
+    gsap.set(el, { opacity:0, y:52 });
     gsap.to(el, { opacity:1, y:0, duration:0.9, ease:'power3.out',
       scrollTrigger: { trigger:el, start:'top 88%', toggleActions:'play none none none' }
     });
   });
 
-  // Counters
+  // COUNTERS
   document.querySelectorAll('.counter').forEach(el => {
     const target = parseInt(el.dataset.target);
     const obj = { v:0 };
     gsap.to(obj, { v:target, duration:2.2, ease:'power2.out',
-      scrollTrigger: { trigger:el, start:'top 82%' },
+      scrollTrigger: { trigger:el, start:'top 85%' },
       onUpdate() { el.textContent = Math.round(obj.v); }
     });
   });
 
-  // HORIZONTAL SCROLL — Leistungen
-  const track = document.getElementById('cards-track');
-  const mm = gsap.matchMedia();
-  mm.add('(min-width: 769px)', () => {
-    gsap.to(track, {
-      x: () => -(track.scrollWidth - window.innerWidth) + 96,
-      ease:'none',
-      scrollTrigger: {
-        trigger:'.services-section', start:'top top',
-        end: () => '+=' + (track.scrollWidth - window.innerWidth + 96),
-        scrub:1, pin:true, anticipatePin:1, invalidateOnRefresh:true
-      }
+  // LEISTUNGEN ACCORDION + PHOTO SWITCH
+  const lstItems = document.querySelectorAll('.lst-item');
+  const lstPhotos = document.querySelectorAll('.lst-photo');
+
+  // curtain reveal on scroll
+  gsap.to('#lst-curtain', {
+    scaleX:0, transformOrigin:'right', duration:1.3, ease:'power4.inOut',
+    scrollTrigger: { trigger:'.lst-section', start:'top 60%' }
+  });
+
+  lstItems.forEach((item, idx) => {
+    const body = item.querySelector('.lst-item-body');
+    if (item.classList.contains('active')) {
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+    item.addEventListener('click', () => {
+      lstItems.forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.lst-item-body').style.maxHeight = '0';
+      });
+      item.classList.add('active');
+      body.style.maxHeight = body.scrollHeight + 'px';
+      lstPhotos.forEach((p,i) => p.classList.toggle('on', i===idx));
     });
   });
 
-  // IMAGE CURTAIN — Über uns
-  gsap.to('#about-curtain', {
-    scaleX:0, transformOrigin:'right', duration:1.4, ease:'power4.inOut',
-    scrollTrigger: { trigger:'.about-section', start:'top 65%' }
+  // ENRICO IMAGE CURTAIN
+  gsap.to('#enrico-cover', {
+    scaleX:0, transformOrigin:'left', duration:1.4, ease:'power4.inOut',
+    scrollTrigger: { trigger:'.enrico', start:'top 65%' }
   });
 
-  // Parallax hero bg
-  gsap.to('.hero-slide.active', {
-    yPercent:-15, ease:'none',
-    scrollTrigger: { trigger:'.hero', start:'top top', end:'bottom top', scrub:true }
-  });
-
-  // MAGNETIC BUTTONS
+  // MAGNETIC
   gsap.matchMedia().add('(min-width: 769px)', () => {
     document.querySelectorAll('.magnetic').forEach(btn => {
       btn.addEventListener('mousemove', e => {
         const r = btn.getBoundingClientRect();
-        const x = e.clientX - r.left - r.width/2;
-        const y = e.clientY - r.top - r.height/2;
-        gsap.to(btn, { x:x*.22, y:y*.22, duration:0.35, ease:'power2.out' });
+        gsap.to(btn, { x:(e.clientX-r.left-r.width/2)*.22, y:(e.clientY-r.top-r.height/2)*.22, duration:.35, ease:'power2.out' });
       });
       btn.addEventListener('mouseleave', () => {
-        gsap.to(btn, { x:0, y:0, duration:0.65, ease:'elastic.out(1,0.4)' });
+        gsap.to(btn, { x:0, y:0, duration:.65, ease:'elastic.out(1,0.4)' });
       });
     });
   });
 
-  // BEFORE/AFTER SLIDER
-  const baContainer = document.getElementById('ba-container');
-  const baAfterWrap = document.getElementById('ba-after-wrap');
-  const baHandle    = document.getElementById('ba-handle');
-  let baDragging = false;
-  let baPct = 50;
-
-  function setBA(pct) {
-    baPct = Math.max(0, Math.min(100, pct));
-    baAfterWrap.style.clipPath = `inset(0 ${100-baPct}% 0 0)`;
-    baHandle.style.left = baPct + '%';
-  }
-  setBA(50);
-
-  baHandle.addEventListener('mousedown', () => baDragging = true);
-  window.addEventListener('mouseup', () => baDragging = false);
-  window.addEventListener('mousemove', e => {
-    if (!baDragging) return;
-    const r = baContainer.getBoundingClientRect();
-    setBA((e.clientX - r.left) / r.width * 100);
+  // STICKY CTA — nach 30% Scroll
+  let stickyClosed = false;
+  ScrollTrigger.create({
+    start: () => window.innerHeight * 0.3,
+    onEnter: () => { if (!stickyClosed) document.getElementById('sticky-cta').classList.add('show'); },
+    onLeaveBack: () => document.getElementById('sticky-cta').classList.remove('show')
   });
-  baHandle.addEventListener('touchstart', () => baDragging = true, {passive:true});
-  window.addEventListener('touchend', () => baDragging = false);
-  window.addEventListener('touchmove', e => {
-    if (!baDragging) return;
-    const r = baContainer.getBoundingClientRect();
-    setBA((e.touches[0].clientX - r.left) / r.width * 100);
-  }, {passive:true});
+  document.getElementById('sticky-close').addEventListener('click', () => {
+    stickyClosed = true;
+    document.getElementById('sticky-cta').classList.remove('show');
+  });
 
   // MOBILE MENU
-  document.getElementById('mobile-btn').addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.add('open');
-  });
-  document.getElementById('mobile-close').addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.remove('open');
-  });
-  document.querySelectorAll('.mobile-menu a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
-  });
-
-  // COOKIE
-  if (!localStorage.getItem('cookie_fazekas')) {
-    setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1800);
-  }
-  document.getElementById('cookie-accept').addEventListener('click', () => {
-    localStorage.setItem('cookie_fazekas','1');
-    document.getElementById('cookie-banner').classList.remove('show');
-  });
-  document.getElementById('cookie-decline').addEventListener('click', () => {
-    document.getElementById('cookie-banner').classList.remove('show');
-  });
+  document.getElementById('ham').addEventListener('click', () => document.getElementById('mob-menu').classList.add('open'));
+  document.getElementById('mob-close').addEventListener('click', () => document.getElementById('mob-menu').classList.remove('open'));
+  document.querySelectorAll('.mob-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mob-menu').classList.remove('open')));
 
   ScrollTrigger.refresh();
 }
